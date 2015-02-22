@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/cultuurnet/deserializer.svg?branch=master)](https://travis-ci.org/cultuurnet/deserializer)
+[![Build Status](https://travis-ci.org/cultuurnet/deserializer.svg?branch=master)](https://travis-ci.org/cultuurnet/deserializer) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/f18ed149-ab7c-490d-8cde-8539ea3a1d74/mini.png)](https://insight.sensiolabs.com/projects/f18ed149-ab7c-490d-8cde-8539ea3a1d74)
