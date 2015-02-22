@@ -7,7 +7,7 @@ namespace CultuurNet\Deserializer;
 
 use ValueObjects\String\String;
 
-abstract class JSONDeserializer implements DeserializerInterface
+class JSONDeserializer implements DeserializerInterface
 {
     /**
      * Decodes a JSON string into a generic PHP object.
