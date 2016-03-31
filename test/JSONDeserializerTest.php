@@ -26,7 +26,7 @@ class JSONDeserializerTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function it_throws_a_not_well_formed_exception_for_invalid_json()
+    public function itThrowsANotWellFormedExceptionForInvalidJson()
     {
         $this->setExpectedException(
             NotWellFormedException::class,
@@ -45,7 +45,7 @@ class JSONDeserializerTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function it_can_deserialize_to_an_object()
+    public function itCanDeserializeToAnObject()
     {
         $jsonString = new StringLiteral(
             '{"key1":"value1","key2":{"key3":"value3"}}'
@@ -61,7 +61,7 @@ class JSONDeserializerTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function it_can_deserialize_to_an_associative_array()
+    public function itCanDeserializeToAnAssociativeArray()
     {
         $jsonString = new StringLiteral(
             '{"key1":"value1","key2":{"key3":"value3"}}'
