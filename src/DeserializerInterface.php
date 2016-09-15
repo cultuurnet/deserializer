@@ -1,13 +1,10 @@
 <?php
-/**
- * @file
- */
 
 namespace CultuurNet\Deserializer;
 
-use ValueObjects\String\String;
+use ValueObjects\String\String as StringLiteral;
 
 interface DeserializerInterface
 {
-    public function deserialize(String $data);
+    public function deserialize(StringLiteral $data);
 }

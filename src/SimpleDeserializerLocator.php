@@ -1,11 +1,8 @@
 <?php
-/**
- * @file
- */
 
 namespace CultuurNet\Deserializer;
 
-use ValueObjects\String\String;
+use ValueObjects\String\String as StringLiteral;
 
 class SimpleDeserializerLocator implements DeserializerLocatorInterface
 {
@@ -15,21 +12,21 @@ class SimpleDeserializerLocator implements DeserializerLocatorInterface
     protected $deserializers = [];
 
     /**
-     * @param String $contentType
+     * @param StringLiteral $contentType
      * @param DeserializerInterface $deserializer
      */
     public function registerDeserializer(
-        String $contentType,
+        StringLiteral $contentType,
         DeserializerInterface $deserializer
     ) {
         $this->deserializers[$contentType->toNative()] = $deserializer;
     }
 
     /**
-     * @param String $contentType
+     * @param StringLiteral $contentType
      * @return DeserializerInterface
      */
-    public function getDeserializerForContentType(String $contentType)
+    public function getDeserializerForContentType(StringLiteral $contentType)
     {
         if (array_key_exists($contentType->toNative(), $this->deserializers)) {
             return $this->deserializers[$contentType->toNative()];
