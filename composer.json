@@ -26,7 +26,8 @@
   "extra": {
     "branch-alias": {
       "dev-master": "0.x-dev",
-      "dev-1.x": "1.x-dev"
+      "dev-1.x": "1.x-dev",
+      "dev-feature/III-1325": "0.x-dev"
     }
   }
 }

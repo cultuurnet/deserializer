@@ -1,16 +1,14 @@
 <?php
-/**
- * @file
- */
+
 namespace CultuurNet\Deserializer;
 
-use ValueObjects\String\String;
+use ValueObjects\String\String as StringLiteral;
 
 interface DeserializerLocatorInterface
 {
     /**
-     * @param String $contentType
+     * @param StringLiteral $contentType
      * @return DeserializerInterface
      */
-    public function getDeserializerForContentType(String $contentType);
+    public function getDeserializerForContentType(StringLiteral $contentType);
 }
