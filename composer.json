@@ -1,7 +1,7 @@
 {
   "name": "cultuurnet/deserializer",
   "description": "Internet media type deserialization library",
-  "license": "GPL-3.0",
+  "license": "Apache-2.0",
   "authors": [
     {
       "name": "Kristof Coomans",
