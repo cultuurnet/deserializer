@@ -2,7 +2,7 @@
 
 namespace CultuurNet\Deserializer;
 
-use ValueObjects\String\String as StringLiteral;
+use ValueObjects\StringLiteral\StringLiteral;
 
 class JSONDeserializer implements DeserializerInterface
 {

@@ -1,11 +1,8 @@
 <?php
-/**
- * @file
- */
 
 namespace CultuurNet\Deserializer;
 
-use ValueObjects\String\String;
+use ValueObjects\StringLiteral\StringLiteral;
 
 class SimpleDeserializerLocatorTest extends \PHPUnit_Framework_TestCase
 {
@@ -21,42 +18,42 @@ class SimpleDeserializerLocatorTest extends \PHPUnit_Framework_TestCase
 
     public function testGivesBackDeserializerThatWasRegistered()
     {
-        $firstDeserializer = $this->getMock(DeserializerInterface::class);
-        $anotherDeserializer = $this->getMock(DeserializerInterface::class);
+        /** @var DeserializerInterface $firstDeserializer */
+        $firstDeserializer = $this->createMock(DeserializerInterface::class);
+        /** @var DeserializerInterface $anotherDeserializer */
+        $anotherDeserializer = $this->createMock(DeserializerInterface::class);
 
         $this->deserializerLocator->registerDeserializer(
-            new String('application/vnd.cultuurnet.foo'),
+            new StringLiteral('application/vnd.cultuurnet.foo'),
             $firstDeserializer
         );
 
         $this->deserializerLocator->registerDeserializer(
-            new String('application/vnd.cultuurnet.bar'),
+            new StringLiteral('application/vnd.cultuurnet.bar'),
             $anotherDeserializer
         );
 
         $this->assertSame(
             $firstDeserializer,
             $this->deserializerLocator->getDeserializerForContentType(
-                new String('application/vnd.cultuurnet.foo')
+                new StringLiteral('application/vnd.cultuurnet.foo')
             )
         );
 
         $this->assertSame(
             $anotherDeserializer,
             $this->deserializerLocator->getDeserializerForContentType(
-                new String('application/vnd.cultuurnet.bar')
+                new StringLiteral('application/vnd.cultuurnet.bar')
             )
         );
     }
 
     public function testThrowsExceptionWhenDeserializerCanNotBeFound()
     {
-        $this->setExpectedException(
-            DeserializerNotFoundException::class
-        );
+        $this->expectException(DeserializerNotFoundException::class);
 
         $this->deserializerLocator->getDeserializerForContentType(
-            new String('application/vnd.cultuurnet.something-else')
+            new StringLiteral('application/vnd.cultuurnet.something-else')
         );
     }
 }
