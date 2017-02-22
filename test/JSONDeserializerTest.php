@@ -2,7 +2,7 @@
 
 namespace CultuurNet\Deserializer;
 
-use ValueObjects\String\String as StringLiteral;
+use ValueObjects\StringLiteral\StringLiteral;
 
 class JSONDeserializerTest extends \PHPUnit_Framework_TestCase
 {
@@ -28,10 +28,8 @@ class JSONDeserializerTest extends \PHPUnit_Framework_TestCase
      */
     public function itThrowsANotWellFormedExceptionForInvalidJson()
     {
-        $this->setExpectedException(
-            NotWellFormedException::class,
-            'Invalid JSON'
-        );
+        $this->expectException(NotWellFormedException::class);
+        $this->expectExceptionMessage('Invalid JSON');
 
         $this->deserializer->deserialize(
             new StringLiteral(
