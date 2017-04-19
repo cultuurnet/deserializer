@@ -11,7 +11,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "nicolopignatelli/valueobjects": "~3.0"
+    "cultuurnet/valueobjects": "~3.0"
   },
   "require-dev": {
     "phpunit/phpunit": "~5.7",
